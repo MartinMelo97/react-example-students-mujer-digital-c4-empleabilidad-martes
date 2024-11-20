@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Students } from './students';
 import { StudentDetail } from './student';
+import { StudentForm } from './student-form';
 
 const initialStudents = [
   {
@@ -48,7 +49,8 @@ export const StudentContainer = () => {
         students={students}
         setCurrentStudent={setCurrentStudent}
       />
-      {currentStudent !== null ? <StudentDetail
+      <StudentForm setStudents={setStudents} />
+      {currentStudent ? <StudentDetail
         student={students[currentStudent]}
       /> : null}
     </>
